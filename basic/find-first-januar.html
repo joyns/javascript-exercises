@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>A Program to find 1st January is being a Sunday between 2014 and 2050.</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
+	</p>
+	
+	
+	<!--<script>
+		var year = prompt("Please enter year");
+		var today = new Date( year, 0, 1);
+		
+		var firstDay = today.getDay();
+		
+		if (year > 2013 && year < 2051){
+		if (firstDay === 0){
+			console.log("Prvi januar " + year + " godine je bio nedelja");
+		}
+		else{
+			console.log("Prvi januar " + year + ". godine nije bio nedelja");
+		}
+		}
+		
+	</script>-->
+	<script>
+		
+		var year = 2014;
+		while (year < 2051){
+			
+			var today = new Date( year, 0, 1);
+			var firstDay = today.getDay();
+			
+			if (firstDay === 0){
+				console.log("Prvi januar " + year + " godine je bio nedelja");
+			}
+			
+			year++;
+		}
+		
+	</script>
+</body>
+</html>

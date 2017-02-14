@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>returns the type</title>
+</head>
+<body>
+	<p>
+	 Write a JavaScript function which accepts an argument and returns the type. <br>
+	Note : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
+	</p>
+	
+	<script>
+		function returnType (argument){
+			return typeof(argument);
+		}
+		
+		var object = {
+			name: "Jelena",
+			age: 33
+		};
+		var niz = ["1", "Jelena", 5, 88];
+		var booleanType = true;
+		var broj = 55;
+		var stringType = "Jelena";
+		
+		console.log(returnType (object));
+		console.log(returnType (niz));
+		console.log(returnType (booleanType));
+		console.log(returnType (broj));
+		console.log(returnType (stringType));
+		console.log(returnType (false));
+		console.log(returnType (12));
+		console.log(returnType ('w3resource'));
+	
+	</script>
+  
+</body>
+</html>

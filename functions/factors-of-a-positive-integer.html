@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>compute the factors of a positive integer</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function to compute the factors of a positive integer.
+	</p>
+	
+	<script>
+	function positiveIntegers(number){
+			
+			var temp = [];
+			
+			for (var divisor = 1; divisor <= number; divisor++ ){
+				
+				if ( number % divisor === 0){
+				
+					temp.push(divisor);
+					
+
+				}
+			
+			
+			}
+			return temp;
+			
+		
+		}
+		
+		console.log(positiveIntegers(9));
+		console.log(positiveIntegers(15));
+		console.log(positiveIntegers(17));
+	</script>
+  
+</body>
+</html>

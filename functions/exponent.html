@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>exponent</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function to compute the value of b^n where n is the exponent and b is the bases. Accept b and n from the user and display the result.
+	</p>
+	<input id="exponent" type="text" placeholder="exponent"><br>
+	<input id="bases" type="text" placeholder="bases"><br>
+	<button id="btn">compute</button>
+	<p>result is: <span id="result"></span></p>
+	
+	
+	<script>
+	var btn = document.getElementById('btn');
+	
+	btn.addEventListener('click', function(){
+		var exponent = parseInt(document.getElementById('exponent').value);
+		var bases = parseInt(document.getElementById('bases').value);
+		
+
+		var result = Math.pow(bases, exponent);
+		
+		document.getElementById('result').textContent = result;
+		
+	});
+		
+	
+	</script>
+  
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <title>Write a JavaScript program to get the current date.</title>
+  </head>
+  <body>
+	<p>
+	Expected Output : <br>
+	mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy 
+	</p>
+	
+	<script>
+		var today = new Date();
+		
+		var day = today.getDate();
+		var dayPrepand = "";
+			if (day < 10){
+				dayPrepand = "0";
+			}
+		var month = today.getMonth() + 1;
+		var monthPrepand = "";
+			if (month < 10){
+				monthPrepand = "0";
+			}
+		var year = today.getFullYear();
+		
+		console.log(monthPrepand + month + "-" + dayPrepand + day + "-" + year);
+		console.log(monthPrepand + month + "/" + dayPrepand + day + "/" + year);
+		console.log(dayPrepand + day + "-" + monthPrepand + month + "-" + year);
+		console.log(dayPrepand + day + "/" + monthPrepand + month + "/" + year);
+	</script>
+  </body>
+  </html>

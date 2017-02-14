@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>second lowest and second greatest numbers</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. <br>
+	Sample array : [1,2,3,4,5] <br>
+	Expected Output : 2,4 	
+	</p>
+	
+	<script>
+		function arraySecond(argument){
+			var sortedArray = argument.sort(function(a, b) {
+			  return a - b;
+			});
+
+			return sortedArray[1] + ", " + sortedArray[sortedArray.length - 2];
+		}
+		var niz = [9,1,2,3,4,5,8, 7, 15, 4, 5, 12 , 0, -1, -5, 7, -4.33];
+		console.log(arraySecond(niz));
+	</script>
+  
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>JS Bin</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function which returns the n rows by n columns identity matrix.
+	</p>
+	
+	<script>
+	function matrix (number){
+		var i;
+		var j;
+		
+		for (i = 0; i < number; i++ ){
+			for(j = 0; j < number; j++ ){
+			
+				if (i === j){
+					console.log(" 1 ");
+				}
+				else{
+					console.log(" 0 ");
+				}
+				console.log(" ");
+				
+		
+			}
+			console.log('----------');
+		
+		}
+	
+	}
+	matrix(5);
+	</script>
+  
+</body>
+</html>

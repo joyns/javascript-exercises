@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>letters in alphabetical order</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function that returns a passed string with letters in alphabetical order. <br>
+	Example string : 'webmaster' <br>
+	Expected Output : 'abeemrstw' <br>
+	Assume punctuation and numbers symbols are not included in the passed string.
+	</p>
+	
+	<script>
+		function alphabeticalOrder (string){
+			string = string.toString();
+			console.log(string.toLowerCase().split("").sort().join(""));
+		
+		}
+		alphabeticalOrder ("Jelena,dsaf ihjko#w[qler5435.");
+		alphabeticalOrder (508342847657);
+	</script>
+  
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <html> 
+  <head>
+  <title>JavaScript basic animation</title>
+  <script type="text/javascript">
+  </script>
+  </head> 
+  <body>
+  <p>Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.</p>
+  <pre id="target">w3resource </pre>
+  
+  
+  <script>
+  
+  var string = document.getElementById('target').textContent;
+
+  var animation = setInterval (function (){
+	var lastLetter = string[string.length - 1];
+
+	var remainLetters = string.substring(0, string.length - 1);
+	
+	string = lastLetter + remainLetters;
+	
+	document.getElementById('target').textContent = string;
+
+  }, 100);
+  
+  
+  </script>
+  </body> 
+  </html>

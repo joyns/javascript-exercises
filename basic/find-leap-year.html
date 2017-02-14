@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Find Leap Year</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
+	</p>
+	<p>
+	Every year that is exactly divisible by four is a leap year, except for years that are exactly divisible by 100, but these centurial years are leap years if they are exactly divisible by 400. For example, the years 1700, 1800, and 1900 are not leap years, but the year 2000 is.
+	</p>
+	
+	<script>
+	
+	var year = prompt("Please enter year");
+	
+	var remainder4 = year % 4;
+	var remainder100 = year % 100;
+	var remainder400 = year % 400;
+	
+	if ( remainder4 === 0 && remainder100 === 0){
+	
+		if(remainder400 === 0){
+			console.log('Godina je prestupna');
+		}else{
+			console.log('Godina nije prestupna');
+		}
+		
+	}else if ( remainder4 === 0 && remainder100 != 0){
+		console.log('Godina je prestupna');
+	}	
+	else if ( remainder4 != 0){
+		console.log('Godina nije prestupna');
+	}
+	
+	
+	</script>
+</body>
+</html>
