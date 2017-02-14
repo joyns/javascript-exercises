@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>generates a string id (specified length) of random characters</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function that generates a string id (specified length) of random characters. <br>
+	Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+	</p>
+	
+	<script>
+		function generateID (numberOfChar){
+		
+			var characterList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+			var stringID = "";
+			
+			for (var i = 0; i < numberOfChar; i++){
+				// choose random character from list
+				
+				var randomChar = characterList.charAt( Math.floor(Math.random() * (characterList.length - 1)) );
+				
+				// add choosen character to stringID
+				
+				stringID += randomChar
+			
+			}
+			
+			return stringID;
+
+		}
+		
+		console.log(generateID (17));
+	</script>
+  
+</body>
+</html>

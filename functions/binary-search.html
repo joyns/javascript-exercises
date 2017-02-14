@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>binary search</title>
+</head>
+<body>
+	<p>
+	Write a function for searching JavaScript arrays with a binary search. <br>
+	Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
+	</p>
+	
+	<script>
+	function binarySearch(narray, delement) {
+	   var mposition = Math.floor(narray.length / 2);
+
+	   if (narray[mposition] === delement){
+		  return mposition;
+	   }
+	   else if (narray.length === 1){
+		  return null;
+	   }
+	   else if (narray[mposition] < delement) {
+		  var arr = narray.slice(mposition + 1);
+		  var res = binarySearch(arr, delement);
+		  if (res === null){
+			 return null;
+		  }
+		  else {
+			 return mposition + 1 + res;
+		  }
+	   }
+	   else {
+		  var arr1 = narray.slice(0, mposition);
+		  return binarySearch(arr1, delement);
+	   }
+	}
+
+ var myArray = [1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23];
+ console.log(binarySearch(myArray, 10));
+	</script>
+	
+	<script>
+	function binarySearchtwo(array,val){
+		// we have to find out the position(index) of val in array.
+		var min = 0;				//minimum index of array elements.
+		var max = array.length-1;	//max index of array elements.
+		var guess;					//index where we supposed val can be found.
+		
+		while(min <= max){
+			guess = Math.floor((min + max) / 2 );
+			
+			if(array[guess] === val){ 
+				return guess;
+			}
+			else if(array[guess] < val){ 
+				min = guess + 1;
+			}
+			else{
+				max = guess - 1;
+			}
+
+		}
+		
+		return null;// that mean elm not found in the array.
+	}
+	var array = [1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23]; 
+	console.log(binarySearchtwo(array, 4));
+	</script>
+  
+</body>
+</html>

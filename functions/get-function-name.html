@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>get the function name</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function to get the function name.
+	</p>
+	
+	<script>
+	function findMyName() {
+		console.log( arguments.callee.name );
+	}
+
+	findMyName();
+	
+	// Warning: The 5th edition of ECMAScript (ES5) forbids use of arguments.callee() in strict mode. Avoid using arguments.callee() by either giving function expressions a name or use a function declaration where a function must call itself.
+	</script>
+  
+</body>
+</html>

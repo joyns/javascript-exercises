@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>extract unique characters from a string</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function to extract unique characters from a string. <br>
+	Example string : "thequickbrownfoxjumpsoverthelazydog" <br>
+	Expected Output : "thequickbrownfxjmpsvlazydg"
+	</p>
+	
+	<script>
+		function extractUnique (string){
+			var unique = "";
+			
+			for (var i = 0; i < string.length; i++){
+				if ( unique.indexOf(string.charAt(i)) == -1 ){
+					unique += string[i];
+				}
+			}
+			return unique;
+		}
+		
+		console.log (extractUnique ("thequickbrownfoxjumpsoverthelazydog"));
+
+//The indexOf() method returns the position of the first occurrence of a specified value in a string.
+//This method returns -1 if the value to search for never occurs.
+
+// str.charAt(0) je 't'
+// uniql.indexOf('t'); trazimo indek karaktera t - on je -1 zati sto to slovo ne postoji
+// dodaje se clan sa indexom 0 iz str u uniq
+	</script>
+  
+  
+  
+</body>
+</html>

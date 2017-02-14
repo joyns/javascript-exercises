@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>all possible subset</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. <br>
+	Sample array : [1, 2, 3] and subset length is 2  <br>
+	Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
+	</p>
+	
+	<script>
+	function subset(arra, arra_size){
+		var result_set = [], 
+			result;
+		
+	   
+		for(var x = 0; x < Math.pow(2, arra.length); x++){
+			result = [];
+			i = arra.length - 1; 
+			
+			do{	
+				if( (x & (1 << i)) !== 0){
+					 result.push(arra[i]);
+				}
+			}  while(i--);
+
+			if( result.length >= arra_size){
+				  result_set.push(result);
+			}
+		}
+
+		return result_set; 
+	}
+
+	console.log(subset([1, 2, 3, 4, 5], 3));
+	</script>
+  
+</body>
+</html>

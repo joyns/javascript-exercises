@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>get the number of occurrences of each letter in specified string</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function to  get the number of occurrences of each letter in specified string. 
+	</p>
+	
+	<script>
+		
+		function numberCharacters(str) {
+			var fixedString = str.toLowerCase().split(" ").join("");			// mislim da je ovde vazno prvo izbaciti whitespace-ove, brojeve, znakove interpunkcije???
+			var charObj = {};
+			
+			for(var i = 0; i < fixedString.length; i++) {
+				if(charObj.hasOwnProperty(fixedString.charAt(i)) === false) { // proverava da li postoji property u objektu sa nazivom karaktera charObj.hasOwnProperty('f') === false
+					charObj[fixedString.charAt(i)] = 1;						// ako ne postoji u objektu, postavi ga i daj mu vrednost jedan npr charObj['f'] = 1;
+				}
+				else {
+					charObj[fixedString.charAt(i)] += 1;					// ako vec postoji property u objektu dodaj jedan na postojecu vrednost
+				}
+			}
+			return charObj;
+		}
+		
+		console.log(numberCharacters("aaaaabbbbgrrrrssg"));
+		
+		
+		// /\S/g		
+		
+		// veliko S \S  - svi karakteri koji nisu whitespace
+		
+		//Matches a single character other than white space. Equivalent to [^ \f\n\r\t\v\u00a0\u1680\u180e\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff].
+		//For example, /\S*/ matches 'foo' in "foo bar."
+		
+		// It (/.../) is a regular expression literal -- it creates a new RegExp object
+		// \s means "match whitespace" (including space, tab, form feed, line feed) and the g is a flag which means "global", i.e. match all whitespace, not just the first.
+		// The "g" at the end is a flag which means "match globally" (the regular expression will now match multiple times -- otherwise it would match just once).
+		
+		// var str = '  A B  C   D EF ';
+		// console.log(str.replace(/\s/g, '#'));  // ##A#B##C###D#EF#
+		// console.log(str.replace(/\s+/g, '#')); // #A#B#C#D#EF#
+	</script>
+  
+</body>
+</html>

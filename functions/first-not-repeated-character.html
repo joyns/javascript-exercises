@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>find the first not repeated character</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function to find the first not repeated character. <br>
+	Sample arguments : 'abacddbec' <br>
+	Expected output : 'e' 
+	</p>
+	
+	<script>
+		function firstNotRepeated (stringText){
+			for (var i = 0; i < stringText.length; i++){						// za i=0 stringText.split('d') splituje ga na slovu d, onda uzima duzinu tog splitovanog niza i oduzme 1
+				var countLetter = stringText.split(stringText[i]).length - 1;   // ako ima jedno d splitovace se na dva clana => countLetter je 1
+																				// ako ima dva d splitovace se na tri clana => countLetter je 2...
+				
+				if (countLetter === 1){
+					return stringText[i];
+				}
+
+			}
+
+		}
+		
+		console.log(firstNotRepeated ('abacddbecrsm'));
+
+	</script>
+  
+</body>
+</html>

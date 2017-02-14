@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>longest substring in a given a string without repeating characters</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript function to find longest substring in a given a string without repeating characters.
+	</p>
+	
+	<script>
+	function longest_substring_without_repeating_characters(input) {
+		var chars = input.split('');
+		var curr_char;
+		var str = "";
+		var longest_string = "";
+		var hash = {};
+		
+		for (var i = 0; i < chars.length; i++) {
+			curr_char = chars[i];
+			
+			if (!hash[chars[i]]) { 
+				str += curr_char; 
+				hash[chars[i]] = {index:i};
+			}
+			else {
+				if(longest_string.length <= str.length){
+					longest_string = str;
+				}
+				var prev_dupeIndex = hash[curr_char].index;
+				var str_FromPrevDupe = input.substring(prev_dupeIndex + 1, i);
+				str = str_FromPrevDupe + curr_char;
+				hash = {};
+				
+				for (var j = prev_dupeIndex + 1; j <= i; j++) {
+					hash[input.charAt(j)] = {index:j};
+				}
+			}
+		}
+		return longest_string.length > str.length ? longest_string : str;
+	}
+	console.log(longest_substring_without_repeating_characters("google.com")); 
+
+	console.log(longest_substring_without_repeating_characters("example.com")); 
+	</script>
+	
+	
+	<script>
+	function longestSubString(str) {
+		var longest = '';
+		var tmpStr = '';
+		for (var i = 0; i < str.length; i++) {
+			for (var j = i; j < str.length; j++) {
+				if (tmpStr.indexOf(str[j]) !== -1) {
+					i = str.indexOf(str[j],i) + 1;
+					tmpStr = '';
+				} else {
+					tmpStr = str.slice(i, j+1);
+					if (tmpStr.length > longest.length) {
+						longest = tmpStr;
+					}
+				}
+			}
+		}
+		return longest;
+	}
+
+	console.log(longestSubString('google.com'));
+	console.log(longestSubString('example.com'));
+	</script>
+  
+</body>
+</html>
