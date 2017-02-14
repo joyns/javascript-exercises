@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>whether a number is even or notwhether a number is even or not</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript program to check whether a number is even or not.
+	</p>
+	
+	<script>
+		function isNumberEvenRecursion (n){
+			if (n < 0){
+				n = Math.abs(n);
+			}
+			if (n == 0){
+				return true;
+			}
+			if (n == 1){
+				return false;
+			}
+			else{
+				n = n - 2;
+				return isNumberEvenRecursion (n);
+			
+			}
+		}
+		console.log(isNumberEvenRecursion (-5));
+		console.log(isNumberEvenRecursion (-4));
+		console.log(isNumberEvenRecursion (0));
+		console.log(isNumberEvenRecursion (4));
+		console.log(isNumberEvenRecursion (5));
+	
+	</script>
+  
+</body>
+</html>

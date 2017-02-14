@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>find the greatest common divisor</title>
+</head>
+<body>
+	<p>
+	 Write a JavaScript program to find the greatest common divisor (gcd) of two positive numbers.
+	</p>
+	
+	<script>
+		function gcd(a, b){
+			var divisor = Math.min (a, b);
+			
+			var find = false;
+			while (find == false) {
+				if (((a % divisor) == 0) && ((b % divisor) == 0)){
+					return divisor;
+					find = true;
+				}
+				else {
+					divisor -= 1;
+				}
+			}
+			
+		}
+		
+		console.log(gcd(2154, 458));
+		console.log(gcd(27, 9));
+		
+		console.log(gcd(64, 160));
+	</script>
+	
+	<script>
+		var greatestDiv = function(a, b) {
+			if ( ! b) {				// ako je b === 0
+				return a;
+			}
+
+			return greatestDiv(b, a % b);	// posle ce proveriti da li je a % b === 0
+		};
+		console.log(greatestDiv(2154, 458));
+		console.log(greatestDiv(64, 160));
+	</script>
+  
+</body>
+</html>

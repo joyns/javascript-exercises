@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>compute the sum of an array of integers</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript program to compute the sum of an array of integers. <br>
+	Example : var array = [1, 2, 3, 4, 5, 6] 	<br>
+	Expected Output : 21 
+	</p>
+	
+	<script>
+	function sumOfIntegers (narray){
+		
+		var result = 0;
+		
+		for (var i = 0; i < narray.length; i++){
+			result += narray[i];
+		}
+		return result;
+	}
+	
+	console.log(sumOfIntegers ([1, 2, 3, 4, 5, 6]));
+	console.log(sumOfIntegers ([5]));
+		
+	</script>
+  
+</body>
+</html>

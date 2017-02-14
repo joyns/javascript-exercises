@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Binary search using recursion</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript program for binary search. <br>
+	Sample array : [0,1,2,3,4,5,6]	<br>
+	console.log(l.br_search(5)) will return '5' 
+	</p>
+	
+	<script>
+	Array.prototype.br_search = function (target) {
+	
+	  var half = parseInt(this.length / 2);					// vratice 3
+	  
+	  if (target === this[half]) {							// ako je l === l [3]  (5=2)
+		return half;
+	  }
+	  if (target > this[half]) {							// 5 >  2 ==> podelice niz na trecem clanu i niz postaje [3,4,5,6] i ponovo krece funkcija, u drugom krugu half ce biti 2 i 														pogodice peticu (zasto vraca half + ... zasto sto broji clanove odbacenog dela niza [0,1,2])
+		return half + this.slice(half,this.length).br_search(target);
+	  } 
+	  else{
+		return this.slice(0, half).br_search(target);		// ako je manje od pola, isecice niz na prvu polovinu i krece ponovo funkcija
+	  }
+	};
+
+	l= [0,1,2,3,4,5,6];
+
+	console.log(l.br_search(5));
+	
+	// ovo je cudna funkcija ne moze se raditi za nizom l= [0,5,1,2,3,4,15,6];, nece ga naci.. poenta je u binarnoj pretrazi
+	</script>
+  
+</body>
+</html>

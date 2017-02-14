@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>calculate the factorial of a number</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript program to calculate the factorial of a number. <br>
+	In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 x 4 x 3 x 2 x 1 = 120 
+	</p>
+	
+	<script>
+		function calculateFactorial(number){
+			var result = number;
+			if (result === 0){
+				return 1;
+			}
+			else{
+				for ( var i = number-1; i > 0; i-- ){
+					result = result * i;
+				}
+				return result;
+			}
+		}
+		
+		console.log(calculateFactorial(5));
+	</script>
+  
+</body>
+</html>

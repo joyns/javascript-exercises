@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>get the integers in range</title>
+</head>
+<body>
+	<p>
+	Write a JavaScript program to get the integers in range (x, y). <br>
+	Example : range(2, 9) <br>
+	Expected Output : [3, 4, 5, 6, 7, 8]
+	</p>
+	
+	<script>
+		function createArray (x, y){
+			var start = Math.min(x, y) + 1;
+			var end = Math.max(x, y);
+			
+			var newarray = [];
+			
+			while(start < end){
+				newarray.push(start);
+				start++;
+			}
+			
+			return newarray;
+		}
+		console.log(createArray (2, 9));
+		console.log(createArray (3, -12));
+	</script>
+	
+	<script>
+		function createArray2 (x, y){
+			
+			var newarray = [];
+
+			if (x < y){
+				x = x+1;
+				while(x < y){
+					newarray.push(x);
+					x++;
+				}
+				return newarray;
+			}
+			else if (x > y){
+				x = x-1;
+				while(x > y){
+					newarray.push(x);
+					x--;
+				}
+				return newarray;
+			}
+			else if (x == y){
+				return 'Numbers are equal';
+			}
+			
+		}
+		console.log(createArray2 (2, 9));
+		console.log(createArray2 (9, 9));
+		console.log(createArray2 (8, 9));
+		console.log(createArray2 (3, -12));
+	</script>
+  
+</body>
+</html>
