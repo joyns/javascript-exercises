@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Write a JavaScript conditional statement to find the largest of five numbers. - w3resource</title>
+</head>
+<body>
+	<p>
+	 Write a JavaScript conditional statement to find the largest of five numbers. Display an alert box to show the result. <br>
+	Sample numbers : -5, -2, -6, 0, -1 <br>
+	Output : 0 
+	</p>
+	
+	<script>
+		var a = 13;
+		var b = 13;
+		var c = -7;
+		var d = 13;
+		var e = 0;
+		
+		if (a >= b && a >= c && a >= d && a >= e){
+			console.log (a);
+		}
+		else if (b >= a && b >= c && b >= d && b >= e){
+			console.log (b);
+		}
+		else if (c >= a && c >= b && c >= d && c >= e){
+			console.log (c);
+		}
+		else if (d >= a && d >= b && d >= c && d >= e){
+			console.log (d);
+		}
+		else if (e >= a && e >= b && e >= c && e >= d){
+			console.log (e);
+		}
+	</script>
+	
+	<script>
+	function large(a,b,c,d,e){
+	var large = a;
+	if(b > large){ large = b;}
+	if (c > large){ large = c;}
+	if (d > large){ large = d;}
+	if (e > large){ large = e;}
+	alert(large);
+	}
+	
+	large(13,8,3,-15,13)
+	</script>
+  
+</body>
+</html>
